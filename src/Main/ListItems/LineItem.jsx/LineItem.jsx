@@ -20,6 +20,7 @@ const LineItem = ({item, handleChecked, handleDelete}) => {
             {item.task}
         </label>
         <FaTrashAlt
+            className='trash-btn'
             role="button"
             onClick={()=>handleDelete(item.id)}
         />

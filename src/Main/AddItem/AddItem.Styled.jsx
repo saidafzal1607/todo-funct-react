@@ -17,11 +17,18 @@ export const StyledAddItem = styled.form`
     .plus-btn{
         cursor:pointer;
         border-radius:5px;
-
+        
         margin-left:10px;
-        border:1px solid #000;
         height:35px;
         width:35px;
-        padding:5px;
+        font-size:20px;
+
     }
+
+    .plus-btn:hover,:focus{
+        background-color:green;
+        color:#fff;
+    }
+
+
 `

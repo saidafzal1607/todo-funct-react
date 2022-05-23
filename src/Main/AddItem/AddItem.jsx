@@ -17,12 +17,15 @@ const AddItem = ({handleSubmit, newItem, setNewItem}) => {
                 ref={inputRef}
                 
             />
-            <FaPlus
-                role="button"
-                className='plus-btn'
-                onClick={handleSubmit}
-                onChange={()=>inputRef.current.focus()}
-            />
+            <button
+            type='submit'
+            className='plus-btn'
+            onClick={()=>inputRef.current.focus()}
+            
+            >
+                <FaPlus/>
+
+            </button>
         </StyledAddItem>
     );
 };

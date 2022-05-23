@@ -7,10 +7,22 @@ export const StyledLine = styled.li`
     justify-content:space-between;
     align-items:center;
     column-gap:10px;
+    margin:10px 0;
     
     input[type=checkbox]{
-        height:25px;
-        width:25px
+        min-height:25px;
+        min-width:25px
+    }
+
+    .trash-btn{
+        min-height:25px;
+        min-width:25px;
+        cursor:pointer;
+        transition:.5s ease;
+    }
+
+    .trash-btn:hover{
+        color:red;
     }
 
     label{
