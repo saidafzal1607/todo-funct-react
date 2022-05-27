@@ -9,6 +9,8 @@ import './App.css';
 
 const App = () => {
 
+  // const API_URL = 'http://localhost:3500/items'
+
   const theme = {
     colors : {
       header: 'cyan',
@@ -17,23 +19,19 @@ const App = () => {
     }
   }
 
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppingList')))
 
 
-  useEffect(() => {
-    const listItems = JSON.parse(localStorage.getItem('shoppingList'))||[]
-    setItems(listItems)
-    
-  }, []);
+  
 
   const handleChecked = (id) =>{
     const listItems = items.map((item=> item.id === id ? {...item, checked : !item.checked } : item))
-    setAndSave(listItems)
+    setAndSaveItems(listItems)
   }
 
   const handleDelete = (id) =>{
     const listItems = items.filter((item)=> item.id !== id);
-    setAndSave(listItems)
+    setAndSaveItems(listItems)
   }
 
   const [newItem , setNewItem] = useState('')
@@ -52,13 +50,14 @@ const App = () => {
       const id = items.length ? items[items.length - 1].id + 1 : 1;
       const myNewItem = {id, checked:false, task};
       const listItems = [...items, myNewItem]
-      setAndSave(listItems);
+      setAndSaveItems(listItems);
   }
 
-  const setAndSave = (newItems) =>{
-    setItems(newItems)
-    localStorage.setItem('shoppingList', JSON.stringify(newItems))
+  const setAndSaveItems = (newItem) =>{
+    localStorage.setItem('shoppingList', JSON.stringify(newItem))
+    setItems(newItem)
   }
+  
 
 
   const [search , setSearch] = useState('')

@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "id":1,
+            "checked": false,
+            "item":"get up early"
+        },
+        {
+            "id":2,
+            "checked": false,
+            "item":"try with gym"
+        },
+        {
+            "id":3,
+            "checked": false,
+            "item":"have a bath"
+        },
+        {
+            "id":4,
+            "checked": false,
+            "item":"eat healthy food"
+        }
+    ]
+}

@@ -25,6 +25,7 @@ const Main = ({items, newItem, setNewItem, handleSubmit, handleChecked, handleDe
             />
             <ListItems
             items={items.filter(item=>((item.task).toLowerCase().includes(search.toLowerCase())))}
+            
             handleChecked={handleChecked}
             handleDelete={handleDelete}
             />
